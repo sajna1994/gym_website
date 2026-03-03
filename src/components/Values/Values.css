@@ -1,0 +1,416 @@
+.values_area {
+    margin-top: 7rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.95) 100%);
+}
+
+/* Decorative Background Lines */
+.values_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg_line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(191, 27, 44, 0.1), transparent);
+}
+
+.line1 {
+    left: 10%;
+}
+
+.line2 {
+    right: 15%;
+    transform: rotate(15deg);
+}
+
+.values_container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Left Side - Image */
+.values_left {
+    position: relative;
+}
+
+.values_image_wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.values_image_circle {
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    background: radial-gradient(circle at 30% 50%, rgba(191, 27, 44, 0.1), transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.values_image {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    filter: saturate(0.85);
+    transition: all 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(191, 27, 44, 0.2);
+    z-index: 2;
+}
+
+.values_image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(191, 27, 44, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 500ms ease;
+    z-index: 1;
+}
+
+.values_image:hover {
+    filter: saturate(1.1);
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+                0 0 0 2px rgba(191, 27, 44, 0.3);
+}
+
+.values_image:hover::before {
+    opacity: 1;
+}
+
+.values_image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 800ms ease;
+}
+
+.values_image:hover img {
+    transform: scale(1.05);
+}
+
+/* Experience Badge */
+.experience_badge {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    background: linear-gradient(135deg, #0A0A0A, #000000);
+    border: 1px solid rgba(191, 27, 44, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    backdrop-filter: blur(10px);
+    animation: floatBadge 6s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.badge_content {
+    text-align: center;
+}
+
+.badge_content h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #BF1B2C;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.badge_content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+/* Right Side - Content */
+.values_right {
+    position: relative;
+}
+
+.values_intro p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 2rem 0 3rem;
+    padding-left: 1rem;
+    border-left: 3px solid #BF1B2C;
+}
+
+/* Values Wrapper */
+.values_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Individual Value Card */
+.card.values_value {
+    background: linear-gradient(145deg, rgba(10, 10, 10, 0.8), rgba(0, 0, 0, 0.9));
+    border: 1px solid rgba(191, 27, 44, 0.1);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+}
+
+.card.values_value::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(191, 27, 44, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
+
+.card.values_value:hover {
+    transform: translateY(-8px);
+    border-color: rgba(191, 27, 44, 0.3);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5),
+                0 0 0 2px rgba(191, 27, 44, 0.1);
+}
+
+.card.values_value:hover::before {
+    opacity: 1;
+}
+
+/* Value Corner Decoration */
+.value_corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid #BF1B2C;
+    border-right: 2px solid #BF1B2C;
+    opacity: 0.3;
+    transition: all 500ms ease;
+}
+
+.card.values_value:hover .value_corner {
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+}
+
+/* Value Icon */
+.value_icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(191, 27, 44, 0.1), rgba(191, 27, 44, 0.05));
+    border: 1px solid rgba(191, 27, 44, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 500ms ease;
+}
+
+.card.values_value:hover .value_icon {
+    background: linear-gradient(135deg, rgba(191, 27, 44, 0.2), rgba(191, 27, 44, 0.1));
+    border-color: rgba(191, 27, 44, 0.4);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.value_icon svg {
+    font-size: 1.5rem;
+    color: #BF1B2C;
+    transition: all 500ms ease;
+}
+
+.card.values_value:hover .value_icon svg {
+    transform: scale(1.1);
+}
+
+/* Value Content */
+.value_content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+.value_content p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/*************************************************
+ Media Queries - Medium Screens 
+ *************************************************/
+@media screen and (max-width: 1024px) {
+    .values_container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .values_left {
+        display: flex;
+        justify-content: center;
+        order: 2;
+    }
+
+    .values_right {
+        order: 1;
+    }
+
+    .values_image {
+        max-width: 500px;
+    }
+
+    .values_intro p {
+        padding-left: 0;
+        border-left: none;
+        text-align: center;
+    }
+
+    .values_intro p::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: #BF1B2C;
+        margin: 0 auto 1rem;
+    }
+
+    .values_wrapper {
+        gap: 1.5rem;
+    }
+
+    .bg_line {
+        display: none;
+    }
+}
+
+/*************************************************
+ Media Queries - Small Screens 
+ *************************************************/
+@media screen and (max-width: 600px) {
+    .values_area {
+        margin-top: 4rem;
+    }
+
+    .values_container {
+        gap: 3rem;
+    }
+
+    .values_image_circle {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .experience_badge {
+        padding: 1rem;
+        bottom: -15px;
+        right: 10px;
+    }
+
+    .badge_content h3 {
+        font-size: 2rem;
+    }
+
+    .badge_content p {
+        font-size: 0.75rem;
+    }
+
+    .values_intro p {
+        font-size: 1rem;
+        margin: 1.5rem 0 2rem;
+    }
+
+    .values_wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card.values_value {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/*************************************************
+ Extra Small Screens 
+ *************************************************/
+@media screen and (max-width: 380px) {
+    .values_image_circle {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .experience_badge {
+        padding: 0.8rem;
+    }
+
+    .badge_content h3 {
+        font-size: 1.5rem;
+    }
+
+    .badge_content p {
+        font-size: 0.65rem;
+    }
+
+    .card.values_value {
+        width: 100%;
+        padding: 1.5rem 1rem;
+    }
+
+    .value_icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .value_icon svg {
+        font-size: 1.2rem;
+    }
+
+    .value_content h4 {
+        font-size: 1.1rem;
+    }
+
+    .value_content p {
+        font-size: 0.85rem;
+    }
+}

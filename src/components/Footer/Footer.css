@@ -1,0 +1,251 @@
+footer {
+    background: linear-gradient(180deg, #0A0A0A 0%, #000000 100%);
+    margin-top: 7rem;
+    padding-top: 7rem;
+    font-size: 0.9rem;
+    color: #fff;
+    border-top: 1px solid rgba(255, 62, 62, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle red overlay effect */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FF3E3E, transparent);
+    animation: footerGlow 3s infinite;
+}
+
+@keyframes footerGlow {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.container.footer__container {
+    display: grid;
+    grid-template-columns: 26rem 1fr 1fr 1fr;
+    gap: 6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer__container article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+}
+
+.footer__container article p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__container article h4 {
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+    color: #FF3E3E;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer__container article h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #FF3E3E;
+}
+
+/* Logo styling in footer */
+.footer__container .logo h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    margin: 0 0 1rem 0;
+}
+
+.footer__container .logo-highlight {
+    color: #FF3E3E;
+    font-weight: 800;
+}
+
+/* Links styling */
+.footer__container article a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 300ms ease;
+    position: relative;
+    padding-left: 0;
+}
+
+.footer__container article a:hover {
+    color: #FF3E3E;
+    padding-left: 5px;
+}
+
+.footer__container article a::before {
+    content: '>';
+    position: absolute;
+    left: -15px;
+    color: #FF3E3E;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.footer__container article a:hover::before {
+    opacity: 1;
+    left: -10px;
+}
+
+.footer_socials {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer_socials a {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 10px 4px 10px;
+    border: 1px solid rgba(255, 62, 62, 0.3);
+    border-radius: 0.6rem;
+    transition: all 500ms ease-in;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer_socials a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 62, 62, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.footer_socials a:hover::before {
+    left: 100%;
+}
+
+.footer_socials a:hover {
+    border: 1px solid #FF3E3E;
+    background-color: transparent;
+    transform: translateY(-3px);
+}
+
+.footer_socials a svg {
+    color: #FF3E3E;
+    font-size: 1.2rem;
+    transition: all 300ms ease;
+}
+
+.footer_socials a:hover svg {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.footer_copyright {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 62, 62, 0.2);
+    margin-top: 5rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer_copyright small {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 62, 62, 0.1);
+}
+
+/*************************************************
+ Media Queries -  Medium Screens 
+ *************************************************/
+@media screen and (max-width: 1024px) {
+    .container.footer__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/*************************************************
+ Media Queries -  Small Screens 
+ *************************************************/
+@media screen and (max-width: 600px) { 
+    footer {
+        margin-top: 4rem;
+        padding-top: 4rem;
+    }
+
+    .container.footer__container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .footer__container article {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__container article h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+    }
+
+    .footer__container .logo h2 {
+        font-size: 1.3rem;
+    }
+
+    .footer_socials {
+        justify-content: center;
+    }
+
+    .footer__container article a::before {
+        display: none;
+    }
+
+    .footer__container article a:hover {
+        padding-left: 0;
+    }
+
+    .footer_copyright small {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/*************************************************
+ Extra Small Screens 
+ *************************************************/
+@media screen and (max-width: 380px) {
+    .footer__container .logo h2 {
+        font-size: 1.1rem;
+    }
+    
+    .footer_socials {
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+    
+    .footer_socials a {
+        padding: 8px 8px 2px 8px;
+    }
+}
