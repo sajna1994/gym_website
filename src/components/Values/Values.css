@@ -370,7 +370,42 @@
         margin: 0 auto;
     }
 }
+/* Add to your Values.css */
+.values-logo-badge {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background: linear-gradient(135deg, #0A0A0A, #000000);
+    border: 2px solid rgba(191, 27, 44, 0.3);
+    border-radius: 15px;
+    padding: 1rem;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: badgePulse 3s ease-in-out infinite;
+}
 
+.values-logo-badge img {
+    height: 40px;
+    width: auto;
+    filter: brightness(1.1);
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@media screen and (max-width: 600px) {
+    .values-logo-badge {
+        top: -10px;
+        left: -10px;
+        padding: 0.7rem;
+    }
+    
+    .values-logo-badge img {
+        height: 30px;
+    }
+}
 /*************************************************
  Extra Small Screens 
  *************************************************/

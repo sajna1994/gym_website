@@ -1,10 +1,11 @@
 import React from 'react';
-import { FaCrown, FaAngleRight, FaDumbbell, FaHeart, FaRunning, FaBolt } from 'react-icons/fa';
+import { FaCrown, FaAngleRight } from 'react-icons/fa';
 import SectionHeading from '../SectionHeading';
 import './Programs.css';
 import {programs} from '../../data'
 import Card from '../../UI/Card/Card';
 import { Link } from 'react-router-dom';
+import myoLogo from '../../images/new gym.png';
 
 const Programs = () => {
     return (
@@ -15,19 +16,21 @@ const Programs = () => {
                     title="Elite Programs"
                     subtitle="Transform Your Body, Elevate Your Spirit"
                 />
+                
+                {/* Brand Decoration */}
+                <div className='programs-brand-mark'>
+                    <img src={myoLogo} alt="MYO" className='brand-mark' />
+                </div>
+                
                 <div className='programs_wrapper'>
                     {
                         programs.map(({id, icon, title, info, path}) => {
                         return (
                             <Card className='programs_program' key={id}>
-                                <div className='program_icon'>
-                                    {icon}
-                                </div>
+                                <span>{icon}</span>
                                 <h4>{title}</h4>
-                                <p>{info}</p>
-                                <Link to={path} className='program_link'>
-                                    Explore Program <FaAngleRight />
-                                </Link>
+                                <small>{info}</small>
+                                <Link to={path} className="program-link">Let's Roll <FaAngleRight></FaAngleRight></Link>
                             </Card>
                         )
                         })

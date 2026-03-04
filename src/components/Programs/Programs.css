@@ -243,7 +243,26 @@
         left: -5rem;
     }
 }
+/* Add to your Programs.css */
+.programs-brand-mark {
+    position: relative;
+    height: 30px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
 
+.brand-mark {
+    height: 30px;
+    width: auto;
+    opacity: 0.3;
+    filter: brightness(1) invert(1);
+    transition: opacity 500ms ease;
+}
+
+.brand-mark:hover {
+    opacity: 0.5;
+}
 /*************************************************
  Extra Small Screens 
  *************************************************/

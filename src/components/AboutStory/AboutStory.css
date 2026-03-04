@@ -39,7 +39,53 @@
         gap: 3rem;
     }
 }
+/* Add to your AboutStory.css */
+.story-logo-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 0.8rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(191, 27, 44, 0.3);
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 500ms ease;
+}
 
+.about_section_image:hover .story-logo-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-logo-overlay img {
+    height: 25px;
+    width: auto;
+}
+
+.story-signature {
+    margin-top: 2rem;
+    opacity: 0.5;
+}
+
+.story-signature img {
+    height: 30px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+@media screen and (max-width: 600px) {
+    .story-logo-overlay {
+        display: none;
+    }
+    
+    .story-signature {
+        display: flex;
+        justify-content: center;
+    }
+}
 /************************************************** 
    Media Queries - SMall Screens 
 ***************************************************/

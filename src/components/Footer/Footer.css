@@ -65,7 +65,25 @@ footer::before {
     height: 2px;
     background: #FF3E3E;
 }
+/* Add to your existing Footer.css */
+.footer-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 1rem;
+    filter: brightness(1.1);
+    transition: all 500ms ease;
+}
 
+.footer-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(191, 27, 44, 0.3));
+}
+
+@media screen and (max-width: 600px) {
+    .footer-logo {
+        height: 90px;
+    }
+}
 /* Logo styling in footer */
 .footer__container .logo h2 {
     font-size: 1.5rem;

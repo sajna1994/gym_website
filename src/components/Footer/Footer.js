@@ -2,6 +2,7 @@ import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
 import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
+import myoLogo from '../../images/new gym.png'
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className='container footer__container'>
             <article>
                 <Link to='/' className='logo'> 
-                    <h2>MYO <span className='logo-highlight'>FITNESS</span> STUDIO</h2>
+                    <img src={myoLogo} alt="MYO FITNESS STUDIO" className='footer-logo' />
                 </Link>
                 <p>Transform your body, transform your life. Join MYO FITNESS STUDIO today and experience the ultimate fitness journey with state-of-the-art equipment and expert trainers.
                 </p>

@@ -40,7 +40,65 @@
         gap: 3rem;
     }
 }
+/* Add to your OurMission.css */
+.mission-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(191, 27, 44, 0.1), rgba(191, 27, 44, 0.05));
+    border: 1px solid rgba(191, 27, 44, 0.2);
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    margin-top: 2rem;
+    transition: all 500ms ease;
+}
 
+.mission-badge:hover {
+    background: linear-gradient(135deg, rgba(191, 27, 44, 0.2), rgba(191, 27, 44, 0.1));
+    border-color: rgba(191, 27, 44, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(191, 27, 44, 0.2);
+}
+
+.mission-badge img {
+    height: 30px;
+    width: auto;
+    filter: brightness(1.1);
+}
+
+.mission-badge span {
+    color: #BF1B2C;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.mission-image-watermark {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 2;
+    animation: watermarkRotate 20s linear infinite;
+}
+
+.mission-image-watermark img {
+    width: 150px;
+    height: auto;
+    filter: brightness(1) invert(1);
+}
+
+@keyframes watermarkRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media screen and (max-width: 600px) {
+    .mission-image-watermark {
+        display: none;
+    }
+}
 /************************************************** 
    Media Queries - SMall Screens 
 ***************************************************/

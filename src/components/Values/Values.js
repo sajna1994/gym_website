@@ -1,10 +1,11 @@
 import React from 'react';
-import './Values.css';
-import gymHuman from '../../images/gymhuman.jpg';
+import './Values.css'
+import gymHuman from '../../images/gymhuman.jpg' 
 import SectionHeading from '../SectionHeading';
-import { FaCrown, FaHeart, FaHandsHelping, FaLeaf, FaUsers, FaTarget } from 'react-icons/fa';
+import { FaCrown } from 'react-icons/fa';
 import { values } from '../../data';
 import Card from '../../UI/Card/Card';
+import myoLogo from '../../images/new gym.png';
 
 const Values = () => {
     return (
@@ -14,18 +15,16 @@ const Values = () => {
                     <div className='values_image_wrapper'>
                         <div className='values_image_circle'></div>
                         <div className='values_image'>
-                            <img src={gymHuman} alt="Dedicated athlete training at MYO FITNESS STUDIO" />
+                            <img src={gymHuman} alt="Human" srcSet='' />
                         </div>
                         
-                       
+  
+                        
+                     
                     </div>
                 </div>
                 <div className='values_right'>
-                    <SectionHeading 
-                        icon={<FaCrown />} 
-                        title='Our Core Values'
-                        subtitle='The principles that drive our fitness philosophy'
-                    />
+                    <SectionHeading icon={<FaCrown></FaCrown>} title='Our Core Values' subtitle='The principles that drive our fitness philosophy'></SectionHeading>
                     
                     <div className='values_intro'>
                         <p>At MYO FITNESS STUDIO, we believe that true transformation goes beyond physical changes. Our values shape every workout, every interaction, and every success story.</p>
@@ -39,13 +38,8 @@ const Values = () => {
                                         <div className='value_icon'>
                                             {icon}
                                         </div>
-                                        <div className='value_content'>
-                                            <h4>{title}</h4>
-                                            <p>{desc}</p>
-                                        </div>
-                                        
-                                        {/* Decorative corner element */}
-                                        <div className='value_corner'></div>
+                                        <h4>{title}</h4>
+                                        <small>{desc}</small>
                                     </Card>
                                 )
                             })

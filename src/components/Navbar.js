@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { links } from '../data';
 import { FaBars, FaTimes } from "react-icons/fa";
+import myoLogo from '../images/new gym.png'; // Import your logo
 
 const Navbar = () => {
     
@@ -13,7 +14,7 @@ const Navbar = () => {
             <div className='container nav__container'>
                 <div>
                     <Link to='/' className='logo' onClick={() => setIsNavSHowing(false)}> 
-                        <h2>MYO <span className='logo-highlight'>FITNESS</span> STUDIO</h2>
+                        <img src={myoLogo} alt="MYO FITNESS STUDIO" className='logo-image' />
                     </Link>
                 </div>
                 <div>

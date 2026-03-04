@@ -56,7 +56,28 @@ nav {
 .logo:hover .logo-highlight::after {
     transform: scaleX(1);
 }
+/* Add to your existing Navbar.css */
+.logo {
+    display: flex;
+    align-items: center;
+}
 
+.logo-image {
+    height: 95px;
+    width: auto;
+    transition: transform 500ms ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive logo */
+@media screen and (max-width: 600px) {
+    .logo-image {
+        height: 95px;
+    }
+}
 ul.nav__links {
     display: flex;
     gap: 2rem;
